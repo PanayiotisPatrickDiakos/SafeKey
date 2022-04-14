@@ -45,7 +45,7 @@ public class AdvertActivity extends AppCompatActivity {
         });
 
     }
-    //Anyone know how I can reference this method in 1 class so I don't have to copy and paste it for every activity LMAO
+    //TODO: Anyone know how I can reference this method in 1 class so I don't have to copy and paste it for every activity LMAO
     @Override
     public void onBackPressed() {
         new AlertDialog.Builder(this)
