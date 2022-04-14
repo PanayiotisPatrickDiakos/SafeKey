@@ -2,6 +2,7 @@ package au.edu.unsw.infs3634.gamifiedlearning;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -37,10 +38,15 @@ public class LoginScreen extends AppCompatActivity {
             public void onClick(View view) {
                 if (username.getText().toString().equals("admin") && password.getText().toString().equals("admin")){
                     Toast.makeText(LoginScreen.this, "Login Successful", Toast.LENGTH_SHORT).show();
-                }else
+                }
+                else
                     Toast.makeText(LoginScreen.this, "Login Failed", Toast.LENGTH_SHORT).show();
 
+                Intent intent = new Intent(LoginScreen.this, MainActivity.class);
+
+                startActivity(intent);
             }
+
 
 
         });
