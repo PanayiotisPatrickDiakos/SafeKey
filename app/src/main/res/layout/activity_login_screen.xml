@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/greywhite"
+    tools:context=".SplashScreen">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView"
+        android:layout_width="159dp"
+        android:layout_height="166dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="95dp"
+
+        app:cardBackgroundColor="#00AAFF"
+        app:cardCornerRadius="20dp"
+        app:cardElevation="10dp">
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="119dp"
+            android:layout_height="145dp"
+            android:layout_gravity="center"
+
+            app:srcCompat="@drawable/ic_action_name" />
+    </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:id="@+id/splash_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/cardView"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="32dp"
+        android:fontFamily="sans-serif"
+        android:text="Welcome, please sign in"
+        android:textColor="@color/darkbue"
+        android:textSize="15sp" />
+
+    <EditText
+        android:id="@+id/username"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_below="@id/splash_text"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginRight="50dp"
+        android:background="@drawable/rounded_edittext"
+        android:drawableLeft="@drawable/ic_baseline_person_24"
+        android:drawablePadding="15dp"
+        android:elevation="10dp"
+        android:inputType="text"
+        android:hint="Username"
+        android:padding="10dp" />
+
+    <EditText
+        android:id="@+id/password"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_below="@id/username"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="50dp"
+        android:background="@drawable/rounded_edittext"
+        android:drawableLeft="@drawable/ic_baseline_key_24"
+        android:drawablePadding="15dp"
+        android:elevation="10dp"
+        android:inputType="text"
+        android:hint="Password"
+        android:padding="10dp" />
+
+    <TextView
+        android:id="@+id/forgotpassword"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Forgot password?"
+        android:layout_below="@id/password"
+        android:layout_marginLeft="235dp"
+        android:layout_marginTop="10dp">
+
+    </TextView>
+
+    <Button
+        android:id="@+id/loginbutton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/forgotpassword"
+        android:layout_marginLeft="235dp"
+        android:layout_marginTop="18dp"
+        android:drawableRight="@drawable/ic_baseline_arrow_forward_24"
+        android:drawablePadding="1dp"
+        android:padding="10dp"
+        android:text="@string/sign_in"
+        android:textSize="16sp"
+        android:enabled="false"
+        app:cornerRadius="50dp" />
+
+
+</RelativeLayout>

@@ -20,14 +20,14 @@ public class SplashScreen extends AppCompatActivity {
         new Timer().schedule(new TimerTask() {
             @Override
             public void run() {
-                startActivity(new Intent(getApplicationContext(), MainActivity.class));
+                startActivity(new Intent(getApplicationContext(), LoginScreen.class));
             }
         }, 2000);
 
     }
 
     public void openMainActivity(){
-        Intent intent = new Intent(this, MainActivity.class);
+        Intent intent = new Intent(this, LoginScreen.class);
         startActivity(intent);
     }
 }
