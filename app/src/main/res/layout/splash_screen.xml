@@ -15,7 +15,7 @@
         android:layout_centerVertical="true"
         android:layout_marginStart="16dp"
         android:gravity="center"
-        app:cardBackgroundColor="#00AAFF"
+        app:cardBackgroundColor="@color/BlueMain"
         app:cardCornerRadius="20dp"
 
         app:cardElevation="10dp"
@@ -32,7 +32,7 @@
             android:layout_height="145dp"
             android:layout_gravity="center"
 
-            app:srcCompat="@drawable/ic_action_name" />
+            app:srcCompat="@mipmap/sk_ic_launcher" />
     </androidx.cardview.widget.CardView>
 
     <TextView
@@ -41,7 +41,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="76dp"
         android:fontFamily="sans-serif-black"
-        android:text="@string/xxxxx"
+        android:text="@string/app_name"
         android:textSize="30sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
