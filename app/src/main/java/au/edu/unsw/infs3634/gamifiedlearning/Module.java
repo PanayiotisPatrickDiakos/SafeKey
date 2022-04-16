@@ -3,12 +3,24 @@ package au.edu.unsw.infs3634.gamifiedlearning;
 import java.util.ArrayList;
 
 public class Module {
+    private String id;
     private String name;
     private int icon;
+    private int difficulty;
 
-    public Module(String name, int icon) {
+    public Module(String id, String name, int icon, int difficulty) {
+        this.id = id;
         this.name = name;
         this.icon = icon;
+        this.difficulty = difficulty;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 
     public String getName() {
@@ -27,6 +39,14 @@ public class Module {
         this.icon = icon;
     }
 
+    public int getDifficulty() {
+        return difficulty;
+    }
+
+    public void setDifficulty(int difficulty) {
+        this.difficulty = difficulty;
+    }
+
     /**
      * THIS NEEDS TO CHANGE TO UTILISE FIREBASE DATABASE
      * ONLY TEMPORARY
@@ -34,10 +54,10 @@ public class Module {
      */
     public static ArrayList<Module> getModules() {
         ArrayList<Module> modules = new ArrayList<>();
-        modules.add(new Module("Password Protection", R.drawable.md_password));
-        modules.add(new Module("Phishing Detection", R.drawable.md_password));
-        modules.add(new Module("Module 3", R.drawable.md_password));
-        modules.add(new Module("Module 4", R.drawable.md_password));
+        modules.add(new Module("1","Password Protection", R.drawable.md_password, 4));
+        modules.add(new Module("2","Phishing Detection", R.drawable.md_password, 3));
+        modules.add(new Module("3","Module 3", R.drawable.md_password, 1));
+        modules.add(new Module("4","Module 4", R.drawable.md_password, 1));
         return modules;
     }
 }
