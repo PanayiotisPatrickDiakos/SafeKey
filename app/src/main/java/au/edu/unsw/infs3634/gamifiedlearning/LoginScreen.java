@@ -1,8 +1,10 @@
 package au.edu.unsw.infs3634.gamifiedlearning;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -12,43 +14,56 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.android.material.button.MaterialButton;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
 
 public class LoginScreen extends AppCompatActivity {
 
-    EditText username;
-    EditText password;
-
-    Button loginButton;
+    private FirebaseAuth mAuth;
+    private EditText email, password;
+    private TextView register;
+    private Button loginButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login_screen);
-        username = (EditText) findViewById(R.id.username);
+
+        mAuth = FirebaseAuth.getInstance();
+        email = (EditText) findViewById(R.id.username);
         password = (EditText) findViewById(R.id.password);
+        register = (TextView) findViewById(R.id.register);
 
         loginButton = (Button) findViewById(R.id.loginbutton);
 
-        username.addTextChangedListener(inputTextWatcher);
+        email.addTextChangedListener(inputTextWatcher);
         password.addTextChangedListener(inputTextWatcher);
 
         loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (username.getText().toString().equals("admin") && password.getText().toString().equals("admin")){
-                    Toast.makeText(LoginScreen.this, "Login Successful", Toast.LENGTH_SHORT).show();
-                }
-                else
-                    Toast.makeText(LoginScreen.this, "Login Failed", Toast.LENGTH_SHORT).show();
+                String user = email.getText().toString().trim();
+                String pass = password.getText().toString().trim();
 
-                Intent intent = new Intent(LoginScreen.this, MainActivity.class);
-
-                startActivity(intent);
+                mAuth.signInWithEmailAndPassword(user, pass).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                    @Override
+                    public void onComplete(@NonNull Task<AuthResult> task) {
+                        if(task.isSuccessful()) {
+                            Toast.makeText(LoginScreen.this, "Login Successful", Toast.LENGTH_SHORT).show();
+                            Intent intent = new Intent(LoginScreen.this, MainActivity.class);
+                            startActivity(intent);
+                        }
+                        else {
+                            Toast.makeText(LoginScreen.this, "Incorrect email or password", Toast.LENGTH_SHORT).show();
+                            email.setBackgroundColor(getResources().getColor(R.color.pastelred));
+                            password.setBackgroundColor(getResources().getColor(R.color.pastelred));
+                        }
+                    }
+                });
             }
-
-
-
         });
     }
         private TextWatcher inputTextWatcher = new TextWatcher() {
@@ -59,9 +74,9 @@ public class LoginScreen extends AppCompatActivity {
 
             @Override
             public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-                String usernameInput = username.getText().toString().trim();
+                String usernameInput = email.getText().toString().trim();
                 String passwordInput = password.getText().toString().trim();
-                //if all 2 user prompts are filled, button will be enabled
+                //If all 2 user prompts are filled, button will be enabled
                 loginButton.setEnabled(!usernameInput.isEmpty() && !passwordInput.isEmpty());
             }
 

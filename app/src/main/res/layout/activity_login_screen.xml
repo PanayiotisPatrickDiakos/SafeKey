@@ -27,6 +27,7 @@
             android:layout_gravity="center"
 
             app:srcCompat="@drawable/ic_action_name" />
+
     </androidx.cardview.widget.CardView>
 
     <TextView
@@ -69,8 +70,8 @@
         android:drawableLeft="@drawable/ic_baseline_key_24"
         android:drawablePadding="15dp"
         android:elevation="10dp"
-        android:inputType="text"
         android:hint="Password"
+        android:inputType="textPassword"
         android:padding="10dp" />
 
     <TextView
@@ -99,5 +100,19 @@
         android:enabled="false"
         app:cornerRadius="50dp" />
 
+    <TextView
+        android:id="@+id/register"
+        android:layout_width="280dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/loginbutton"
+        android:layout_alignStart="@+id/password"
+        android:layout_alignEnd="@+id/password"
+        android:layout_marginStart="21dp"
+        android:layout_marginTop="36dp"
+        android:layout_marginEnd="11dp"
+        android:gravity="center"
+        android:text="@string/register">
+
+    </TextView>
 
 </RelativeLayout>
