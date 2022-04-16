@@ -1,8 +1,11 @@
 package au.edu.unsw.infs3634.gamifiedlearning;
 
+import android.util.Log;
+
 import java.util.ArrayList;
 
 public class Module {
+    private static final String TAG = "Module";
     private String id;
     private String name;
     private int icon;
@@ -59,5 +62,16 @@ public class Module {
         modules.add(new Module("3","Module 3", R.drawable.md_password, 1));
         modules.add(new Module("4","Module 4", R.drawable.md_password, 1));
         return modules;
+    }
+
+    public static Module getModule(String symbol) {
+        Log.d(TAG, "getDestination Running" + symbol);
+        ArrayList<Module> modules = Module.getModules();
+        for(final Module module : modules) {
+            if(module.getId().equals(symbol)) {
+                return module;
+            }
+        }
+        return null;
     }
 }

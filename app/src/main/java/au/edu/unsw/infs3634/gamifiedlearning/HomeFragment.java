@@ -1,5 +1,6 @@
 package au.edu.unsw.infs3634.gamifiedlearning;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -45,10 +46,10 @@ public class HomeFragment extends Fragment {
 
     protected void launchDetailActivity (String symbol) {
         Log.d(TAG, "Detail Activity Launched");
-//        Intent intent = new Intent(this, DetailActivity.class);
-//        intent.putExtra(DetailActivity.INTENT_MESSAGE, symbol);
-//        Log.d(TAG,symbol);
-//        startActivity(intent);
+        Intent intent = new Intent(getContext(), ModuleDetailActivity.class);
+        intent.putExtra(ModuleDetailActivity.INTENT_MESSAGE, symbol);
+        startActivity(intent);
+
     }
 
 }

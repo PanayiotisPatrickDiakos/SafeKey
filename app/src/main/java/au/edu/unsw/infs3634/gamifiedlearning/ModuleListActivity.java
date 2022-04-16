@@ -49,9 +49,8 @@ public class ModuleListActivity extends AppCompatActivity {
      */
     protected void launchDetailActivity (String symbol) {
         Log.d(TAG, "Detail Activity Launched");
-//        Intent intent = new Intent(this, DetailActivity.class);
-//        intent.putExtra(DetailActivity.INTENT_MESSAGE, symbol);
-//        Log.d(TAG,symbol);
-//        startActivity(intent);
+        Intent intent = new Intent(this, ModuleDetailActivity.class);
+        intent.putExtra(ModuleDetailActivity.INTENT_MESSAGE, symbol);
+        startActivity(intent);
     }
 }

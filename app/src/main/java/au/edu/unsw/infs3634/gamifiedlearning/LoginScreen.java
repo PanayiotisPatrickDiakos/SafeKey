@@ -65,6 +65,14 @@ public class LoginScreen extends AppCompatActivity {
                 });
             }
         });
+
+        register.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(LoginScreen.this, RegisterActivity.class);
+                startActivity(intent);
+            }
+        });
     }
         private TextWatcher inputTextWatcher = new TextWatcher() {
             @Override
