@@ -94,10 +94,10 @@
         android:layout_marginTop="18dp"
         android:drawableRight="@drawable/ic_baseline_arrow_forward_24"
         android:drawablePadding="1dp"
+        android:enabled="false"
         android:padding="10dp"
         android:text="@string/sign_in"
         android:textSize="16sp"
-        android:enabled="false"
         app:cornerRadius="50dp" />
 
     <TextView
