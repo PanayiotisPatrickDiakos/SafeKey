@@ -10,7 +10,7 @@ import android.widget.TextView;
 
 public class ModuleQuizActivity extends AppCompatActivity {
     private static final String TAG = "ModuleQuizActivity";
-    private TextView mQuizName;
+    private TextView mQuizName, mTimer;
     public static final String INTENT_MESSAGE = "intent_message";
 
     @Override
@@ -18,7 +18,9 @@ public class ModuleQuizActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_module_quiz);
 
+
         mQuizName = findViewById(R.id.quiz_Name);
+        mTimer = findViewById(R.id.timer);
         Intent intent = getIntent();
         if (intent.hasExtra(INTENT_MESSAGE)) {
             String moduleSymbol = getIntent().getStringExtra(INTENT_MESSAGE);
