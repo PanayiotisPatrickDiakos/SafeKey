@@ -13,12 +13,6 @@
         android:layout_height="60dp"
         android:background="@color/white">
 
-        <ImageView
-            android:layout_width="20dp"
-            android:layout_height="20dp"
-            android:layout_marginStart="15dp"
-            android:layoutcenterVertical="true" />
-
         <TextView
             android:id="@+id/quiz_Name"
             android:layout_width="wrap_content"
