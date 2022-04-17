@@ -55,7 +55,7 @@
     </RelativeLayout>
 
     <TextView
-        android:id="@+id/questions"
+        android:id="@+id/questions_counter"
         android:layout_width="wrap_content"
         android:layout_height="30dp"
         android:layout_gravity="center"
@@ -83,39 +83,39 @@
         android:textSize="16sp"/>
 
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/option1"
+        android:id="@+id/optionA"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_marginStart="20dp"
         android:layout_marginTop="20dp"
-        android:text="Option 1"
+        android:text="Option A"
         android:background="@drawable/round_back_white10"
         android:layout_marginEnd="20dp"/>
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/option2"
+        android:id="@+id/optionB"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_marginStart="20dp"
         android:layout_marginTop="20dp"
-        android:text="Option 2"
+        android:text="Option B"
         android:background="@drawable/round_back_white10"
         android:layout_marginEnd="20dp"/>
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/option3"
+        android:id="@+id/optionC"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_marginStart="20dp"
         android:layout_marginTop="20dp"
-        android:text="Option 3"
+        android:text="Option C"
         android:background="@drawable/round_back_white10"
         android:layout_marginEnd="20dp"/>
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/option4"
+        android:id="@+id/optionD"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_marginStart="20dp"
         android:layout_marginTop="20dp"
-        android:text="Option 4"
+        android:text="Option D"
         android:background="@drawable/round_back_white10"
         android:layout_marginEnd="20dp"/>
 

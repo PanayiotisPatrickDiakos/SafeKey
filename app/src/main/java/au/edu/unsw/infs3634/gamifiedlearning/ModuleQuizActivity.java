@@ -1,16 +1,32 @@
 package au.edu.unsw.infs3634.gamifiedlearning;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.AppCompatButton;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Timer;
+import java.util.TimerTask;
 
 public class ModuleQuizActivity extends AppCompatActivity {
     private static final String TAG = "ModuleQuizActivity";
     private TextView mQuizName, mTimer;
+    private TextView mQuestion, mQuestions;
+    private AppCompatButton mOptionA, mOptionB, mOptionC, mOptionD;
+    private AppCompatButton mNext;
+    private Timer quizTimer;
+    private int totalTimeInMins = 1;
+    private int seconds = 0;
+    private List<QuestionsList> questionsList = new ArrayList<>();
+
+
     public static final String INTENT_MESSAGE = "intent_message";
 
     @Override
@@ -21,6 +37,17 @@ public class ModuleQuizActivity extends AppCompatActivity {
 
         mQuizName = findViewById(R.id.quiz_Name);
         mTimer = findViewById(R.id.timer);
+
+        mQuestion = findViewById(R.id.quiz_question);
+        mQuestions = findViewById(R.id.questions_counter);
+
+        mOptionA = findViewById(R.id.optionA);
+        mOptionB = findViewById(R.id.optionB);
+        mOptionC = findViewById(R.id.optionC);
+        mOptionD = findViewById(R.id.optionD);
+
+        mNext = findViewById(R.id.quiz_next);
+
         Intent intent = getIntent();
         if (intent.hasExtra(INTENT_MESSAGE)) {
             String moduleSymbol = getIntent().getStringExtra(INTENT_MESSAGE);
@@ -31,5 +58,86 @@ public class ModuleQuizActivity extends AppCompatActivity {
                 mQuizName.setText(module.getName());
             }
         }
+
+        startTimer(mTimer);
+    }
+
+    private void startTimer(TextView timerTextView) {
+        quizTimer = new Timer();
+        quizTimer.scheduleAtFixedRate(new TimerTask() {
+            @Override
+            public void run() {
+                if(seconds == 0) {
+                    totalTimeInMins--;
+                    seconds = 59;
+                } else if(seconds == 0 && totalTimeInMins == 0) {
+                        quizTimer.purge();
+                        quizTimer.cancel();
+                        Toast.makeText(ModuleQuizActivity.this, "Time Over", Toast.LENGTH_SHORT).show();
+                        Intent intent = new Intent(ModuleQuizActivity.this, ModuleQuizResultsActivity.class);
+                        intent.putExtra("correct", getCorrect());
+                        intent.putExtra("incorrect", getIncorrect());
+                        startActivity(intent);
+
+                        finish();
+                } else {
+                    seconds--;
+                }
+
+                runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        String finalMinutes = String.valueOf(totalTimeInMins);
+                        String finalSeconds = String.valueOf(seconds);
+
+                        if(finalMinutes.length() == 1) {
+                            finalMinutes = "0" + finalMinutes;
+                        }
+
+                        if(finalSeconds.length() == 1) {
+                            finalSeconds = "0" + finalSeconds;
+                        }
+
+                        timerTextView.setText(finalMinutes + ":" + finalSeconds);
+                    }
+                });
+            }
+        }, 1000, 1000);
+    }
+
+
+
+    private int getCorrect() {
+        int correctAnswers = 0;
+        for(int i = 0; i < questionsList.size(); i++) {
+            String getUserSelectedAnswer = questionsList.get(i).getUserSelectedAnswer();
+            String getCorrectAnswer = questionsList.get(i).getAnswer();
+
+            if(getUserSelectedAnswer.equals(getCorrectAnswer)){
+                correctAnswers++;
+            }
+        }
+        return correctAnswers;
+    }
+
+    private int getIncorrect() {
+        int correctAnswers = 0;
+        for(int i = 0; i < questionsList.size(); i++) {
+            String getUserSelectedAnswer = questionsList.get(i).getUserSelectedAnswer();
+            String getCorrectAnswer = questionsList.get(i).getAnswer();
+
+            if(!getUserSelectedAnswer.equals(getCorrectAnswer)){
+                correctAnswers++;
+            }
+        }
+        return correctAnswers;
+    }
+
+    @Override
+    public void onBackPressed () {
+        quizTimer.purge();
+        quizTimer.cancel();
+        startActivity(new Intent(ModuleQuizActivity.this, MainActivity.class));
+        finish();
     }
 }

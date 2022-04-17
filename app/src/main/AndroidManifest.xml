@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.GamifiedLearning">
         <activity
+            android:name=".ModuleQuizResultsActivity"
+            android:exported="false" />
+        <activity
             android:name=".ModuleQuizActivity"
             android:exported="false" />
         <activity
