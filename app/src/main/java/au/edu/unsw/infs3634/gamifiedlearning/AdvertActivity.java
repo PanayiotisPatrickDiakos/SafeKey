@@ -26,6 +26,7 @@ public class AdvertActivity extends AppCompatActivity {
 
         mCancel = findViewById(R.id.iv_cancel);
         mAdvert = findViewById(R.id.iv_ad);
+//todo: random ad generator here
 
         mCancel.setOnClickListener(new View.OnClickListener() {
             @Override

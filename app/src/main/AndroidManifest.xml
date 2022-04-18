@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.GamifiedLearning">
         <activity
-            android:name=".subscripton_screen"
+            android:name=".SubscriptionActivity"
             android:exported="false" />
         <activity
             android:name=".ModuleQuizResultsActivity"

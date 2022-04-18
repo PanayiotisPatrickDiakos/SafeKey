@@ -50,17 +50,13 @@ public class Module {
         this.difficulty = difficulty;
     }
 
-    /**
-     * THIS NEEDS TO CHANGE TO UTILISE FIREBASE DATABASE
-     * ONLY TEMPORARY
-     * @return
-     */
+
     public static ArrayList<Module> getModules() {
         ArrayList<Module> modules = new ArrayList<>();
         modules.add(new Module("1","Password Protection", R.drawable.md_password, 4));
-        modules.add(new Module("2","Phishing Detection", R.drawable.md_password, 3));
-        modules.add(new Module("3","Module 3", R.drawable.md_password, 1));
-        modules.add(new Module("4","Module 4", R.drawable.md_password, 1));
+        modules.add(new Module("2","Cyber Awareness", R.drawable.md_password, 3));
+        modules.add(new Module("3","Netiquette", R.drawable.md_password, 1));
+        modules.add(new Module("4","Phishing Detection", R.drawable.md_password, 1));
         return modules;
     }
 
