@@ -58,8 +58,8 @@ public class LoginScreen extends AppCompatActivity {
                         }
                         else {
                             Toast.makeText(LoginScreen.this, "Incorrect email or password", Toast.LENGTH_SHORT).show();
-                            email.setBackgroundColor(getResources().getColor(R.color.pastelred));
-                            password.setBackgroundColor(getResources().getColor(R.color.pastelred));
+                            email.setBackgroundColor(getResources().getColor(R.color.pastel_red));
+                            password.setBackgroundColor(getResources().getColor(R.color.pastel_red));
                         }
                     }
                 });

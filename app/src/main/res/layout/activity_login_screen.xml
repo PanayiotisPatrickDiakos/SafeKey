@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/greywhite"
+    android:background="@color/grey_white"
     tools:context=".SplashScreen">
 
     <androidx.cardview.widget.CardView
@@ -39,7 +39,7 @@
         android:layout_marginTop="32dp"
         android:fontFamily="sans-serif"
         android:text="Welcome, please sign in"
-        android:textColor="@color/darkbue"
+        android:textColor="@color/dark_bue"
         android:textSize="15sp" />
 
     <EditText

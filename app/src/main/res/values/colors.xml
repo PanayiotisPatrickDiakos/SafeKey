@@ -14,8 +14,9 @@
     <color name="light_blue_A200">#FF40C4FF</color>
     <color name="light_blue_A400">#FF00B0FF</color>
     <color name="black_overlay">#66000000</color>
-    <color name="greywhite">#f7f7f7</color>
-    <color name="darkbue">#0065b8</color>
-    <color name="pastelred">#FF6961</color>
+    <color name="grey_white">#f7f7f7</color>
+    <color name="dark_bue">#0065b8</color>
+    <color name="pastel_red">#FF6961</color>
+    <color name="pastel_green">#C1E1C1</color>
 
 </resources>
