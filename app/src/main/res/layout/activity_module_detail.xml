@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -10,23 +10,81 @@
         android:id="@+id/detail_startQuiz"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Start Module"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
         android:background="@drawable/rounded_buttons"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.556" />
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="50dp"
+        android:layout_centerHorizontal="true"
+        android:text="Start Module" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="230dp"
+        android:background="@drawable/ic_wave_18" />
 
     <TextView
         android:id="@+id/detail_Name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="188dp"
+        android:layout_below="@id/moduleHeader"
+        android:layout_marginLeft="25dp"
+        android:layout_marginTop="10dp"
         android:text="TextView"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+        android:textColor="@color/white"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/description_Name"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/detail_Name"
+        android:textColor="@color/white"
+        android:layout_marginLeft="25dp"
+        android:layout_marginTop="7dp"
+        android:text="TextView" />
+
+    <TextView
+        android:id="@+id/moduleHeader"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="28dp"
+        android:fontFamily="sans-serif-black"
+        android:text="Welcome to the Module for:"
+        android:textColor="@color/white"
+        android:textSize="25sp" />
+
+    <TextView
+        android:id="@+id/highest_score_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/description_Name"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="80dp"
+        android:text="Your higest score is:"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/score"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/highest_score_text"
+        android:layout_marginLeft="130dp"
+        android:layout_marginTop="80dp"
+        android:fontFamily="sans-serif-black"
+        android:text="X"
+        android:textSize="80dp" />
+
+    <TextView
+        android:id="@+id/out_of_ten"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/highest_score_text"
+        android:layout_toRightOf="@+id/score"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="80dp"
+        android:fontFamily="sans-serif-black"
+        android:text="/10"
+        android:textSize="80dp" />
+
+
+</RelativeLayout>
