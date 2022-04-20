@@ -54,60 +54,43 @@
         android:textColor="@color/black"
         android:textSize="16sp" />
 
-    <androidx.cardview.widget.CardView
-        android:layout_width="260dp"
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/subscriptionOptionA"
+        android:layout_width="280dp"
         android:layout_height="50dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_centerInParent="true"
-        android:layout_marginStart="75dp"
-        android:layout_marginTop="359dp">
-
-        <TextView
-            android:id="@+id/subscription_plans"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:text="1 month - Price"
-            android:textSize="18sp" />
-    </androidx.cardview.widget.CardView>
-
-    <androidx.cardview.widget.CardView
-        android:layout_width="260dp"
+        android:layout_below="@+id/subscription_plan_header"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="20dp"
+        android:background="@drawable/round_back_white10"
+        android:elevation="20dp"
+        android:text="Option A" />
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/subscriptionOptionB"
+        android:layout_width="280dp"
         android:layout_height="50dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_centerInParent="true"
-        android:layout_marginStart="75dp"
-        android:layout_marginTop="279dp">
+        android:layout_below="@+id/subscriptionOptionA"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="30dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginEnd="20dp"
+        android:background="@drawable/round_back_white10"
+        android:elevation="20dp"
+        android:text="Option B" />
 
-        <TextView
-            android:id="@+id/subscription_plans1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:text="1 week - Free"
-            android:textSize="18sp" />
-
-    </androidx.cardview.widget.CardView>
-
-    <androidx.cardview.widget.CardView
-        android:layout_width="260dp"
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/subscriptionOptionC"
+        android:layout_width="280dp"
         android:layout_height="50dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_centerInParent="true"
-        android:layout_marginStart="74dp"
-        android:layout_marginTop="442dp">
-
-        <TextView
-            android:id="@+id/subscription_plans2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:text="3 months - Price"
-            android:textSize="18sp" />
-    </androidx.cardview.widget.CardView>
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/subscriptionOptionB"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="20dp"
+        android:background="@drawable/round_back_white10"
+        android:elevation="20dp"
+        android:text="Option C" />
 
     <Button
         android:id="@+id/subscriptionButton"
