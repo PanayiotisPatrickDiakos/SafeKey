@@ -19,24 +19,45 @@
         <entry key="..\:/GitHubLocal/GitHub/unsw-gamified-learning-app-group-30-1/app/src/main/res/layout/activity_module_quiz.xml" value="0.264" />
         <entry key="..\:/GitHubLocal/GitHub/unsw-gamified-learning-app-group-30-1/app/src/main/res/layout/activity_module_quiz_results.xml" value="0.264" />
         <entry key="..\:/GitHubLocal/GitHub/unsw-gamified-learning-app-group-30-1/app/src/main/res/layout/activity_quiz_list.xml" value="0.1" />
-        <entry key="..\:/GitHubLocal/GitHub/unsw-gamified-learning-app-group-30-1/app/src/main/res/layout/activity_register.xml" value="0.1" />
+        <entry key="..\:/GitHubLocal/GitHub/unsw-gamified-learning-app-group-30-1/app/src/main/res/layout/activity_register.xml" value="0.176" />
         <entry key="..\:/GitHubLocal/GitHub/unsw-gamified-learning-app-group-30-1/app/src/main/res/layout/activity_subscripton_screen.xml" value="0.3046875" />
         <entry key="..\:/GitHubLocal/GitHub/unsw-gamified-learning-app-group-30-1/app/src/main/res/layout/fragment_home.xml" value="0.17916666666666667" />
-        <entry key="..\:/GitHubLocal/GitHub/unsw-gamified-learning-app-group-30-1/app/src/main/res/layout/fragment_person.xml" value="0.17916666666666667" />
         <entry key="..\:/GitHubLocal/GitHub/unsw-gamified-learning-app-group-30-1/app/src/main/res/layout/module_card_row.xml" value="0.4" />
         <entry key="..\:/GitHubLocal/GitHub/unsw-gamified-learning-app-group-30-1/app/src/main/res/layout/splash_screen.xml" value="0.1796875" />
         <entry key="..\:/GitHubLocal/GitHub/unsw-gamified-learning-app-group-30-1/app/src/main/res/menu/nav_menu.xml" value="0.17916666666666667" />
         <entry key="..\:/Users/Nevin/StudioProjects/unsw-gamified-learning-app-group-30-1/app/src/main/res/drawable-anydpi/ic_action_name.xml" value="0.3895" />
+        <entry key="..\:/Users/Nevin/StudioProjects/unsw-gamified-learning-app-group-30-1/app/src/main/res/drawable/button_hover_color.xml" value="0.538" />
+        <entry key="..\:/Users/Nevin/StudioProjects/unsw-gamified-learning-app-group-30-1/app/src/main/res/drawable/ic_baseline_arrow_forward_24.xml" value="0.3895" />
+        <entry key="..\:/Users/Nevin/StudioProjects/unsw-gamified-learning-app-group-30-1/app/src/main/res/drawable/ic_baseline_fingerprint_24.xml" value="0.5435" />
+        <entry key="..\:/Users/Nevin/StudioProjects/unsw-gamified-learning-app-group-30-1/app/src/main/res/drawable/ic_baseline_home_24.xml" value="0.5435" />
+        <entry key="..\:/Users/Nevin/StudioProjects/unsw-gamified-learning-app-group-30-1/app/src/main/res/drawable/ic_baseline_pageview_24.xml" value="0.3895" />
+        <entry key="..\:/Users/Nevin/StudioProjects/unsw-gamified-learning-app-group-30-1/app/src/main/res/drawable/ic_baseline_person_24.xml" value="0.5435" />
+        <entry key="..\:/Users/Nevin/StudioProjects/unsw-gamified-learning-app-group-30-1/app/src/main/res/drawable/ic_baseline_settings_24.xml" value="0.3895" />
+        <entry key="..\:/Users/Nevin/StudioProjects/unsw-gamified-learning-app-group-30-1/app/src/main/res/drawable/ic_launcher_background.xml" value="0.3895" />
+        <entry key="..\:/Users/Nevin/StudioProjects/unsw-gamified-learning-app-group-30-1/app/src/main/res/drawable/ic_wave_16.xml" value="0.5435" />
+        <entry key="..\:/Users/Nevin/StudioProjects/unsw-gamified-learning-app-group-30-1/app/src/main/res/drawable/ic_wave_17.xml" value="0.3895" />
+        <entry key="..\:/Users/Nevin/StudioProjects/unsw-gamified-learning-app-group-30-1/app/src/main/res/drawable/ic_wave_18.xml" value="0.314" />
+        <entry key="..\:/Users/Nevin/StudioProjects/unsw-gamified-learning-app-group-30-1/app/src/main/res/drawable/rating_bar.xml" value="0.3895" />
         <entry key="..\:/Users/Nevin/StudioProjects/unsw-gamified-learning-app-group-30-1/app/src/main/res/drawable/round_back_green10.xml" value="0.3895" />
         <entry key="..\:/Users/Nevin/StudioProjects/unsw-gamified-learning-app-group-30-1/app/src/main/res/drawable/round_back_light_yellow10.xml" value="0.3895" />
+        <entry key="..\:/Users/Nevin/StudioProjects/unsw-gamified-learning-app-group-30-1/app/src/main/res/drawable/round_back_red10.xml" value="0.5435" />
+        <entry key="..\:/Users/Nevin/StudioProjects/unsw-gamified-learning-app-group-30-1/app/src/main/res/drawable/round_back_white10.xml" value="0.5435" />
+        <entry key="..\:/Users/Nevin/StudioProjects/unsw-gamified-learning-app-group-30-1/app/src/main/res/drawable/rounded_buttons.xml" value="0.538" />
+        <entry key="..\:/Users/Nevin/StudioProjects/unsw-gamified-learning-app-group-30-1/app/src/main/res/drawable/rounded_edittext.xml" value="0.538" />
         <entry key="..\:/Users/Nevin/StudioProjects/unsw-gamified-learning-app-group-30-1/app/src/main/res/layout/activity_advert.xml" value="0.36096014492753625" />
         <entry key="..\:/Users/Nevin/StudioProjects/unsw-gamified-learning-app-group-30-1/app/src/main/res/layout/activity_login_screen.xml" value="0.55" />
         <entry key="..\:/Users/Nevin/StudioProjects/unsw-gamified-learning-app-group-30-1/app/src/main/res/layout/activity_main.xml" value="0.36096014492753625" />
-        <entry key="..\:/Users/Nevin/StudioProjects/unsw-gamified-learning-app-group-30-1/app/src/main/res/layout/activity_module_detail.xml" value="0.36096014492753625" />
+        <entry key="..\:/Users/Nevin/StudioProjects/unsw-gamified-learning-app-group-30-1/app/src/main/res/layout/activity_module_detail.xml" value="0.33868974042027195" />
         <entry key="..\:/Users/Nevin/StudioProjects/unsw-gamified-learning-app-group-30-1/app/src/main/res/layout/activity_module_list.xml" value="0.36096014492753625" />
         <entry key="..\:/Users/Nevin/StudioProjects/unsw-gamified-learning-app-group-30-1/app/src/main/res/layout/activity_module_quiz.xml" value="0.36096014492753625" />
         <entry key="..\:/Users/Nevin/StudioProjects/unsw-gamified-learning-app-group-30-1/app/src/main/res/layout/activity_subscripton_screen.xml" value="0.36096014492753625" />
         <entry key="..\:/Users/Nevin/StudioProjects/unsw-gamified-learning-app-group-30-1/app/src/main/res/layout/fragment_home.xml" value="0.55" />
+        <entry key="..\:/Users/Nevin/StudioProjects/unsw-gamified-learning-app-group-30-1/app/src/main/res/layout/fragment_person.xml" value="0.55" />
+        <entry key="..\:/Users/Nevin/StudioProjects/unsw-gamified-learning-app-group-30-1/app/src/main/res/layout/fragment_settings.xml" value="0.24257425742574257" />
+        <entry key="..\:/Users/Nevin/StudioProjects/unsw-gamified-learning-app-group-30-1/app/src/main/res/layout/fragment_subscription.xml" value="0.55" />
+        <entry key="..\:/Users/Nevin/StudioProjects/unsw-gamified-learning-app-group-30-1/app/src/main/res/layout/fragment_subscription2.xml" value="0.55" />
+        <entry key="..\:/Users/Nevin/StudioProjects/unsw-gamified-learning-app-group-30-1/app/src/main/res/layout/module_card_row.xml" value="0.55" />
+        <entry key="..\:/Users/Nevin/StudioProjects/unsw-gamified-learning-app-group-30-1/app/src/main/res/layout/splash_screen.xml" value="0.36096014492753625" />
         <entry key="app/src/main/res/drawable-anydpi/ic_action_name.xml" value="0.2785" />
         <entry key="app/src/main/res/drawable/ic_baseline_home_24.xml" value="0.2785" />
         <entry key="app/src/main/res/drawable/ic_baseline_key_24.xml" value="0.2785" />

@@ -71,6 +71,7 @@ import java.util.List;
                 mImage = view.findViewById(R.id.iv_Icon);
                 mName = view.findViewById(R.id.txt_Name);
                 mRating = view.findViewById(R.id.rb_Difficulty);
+
             }
 
             @Override

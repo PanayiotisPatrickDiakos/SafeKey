@@ -66,14 +66,15 @@
         android:background="@drawable/round_back_white10"
         android:elevation="20dp"
         android:text="Option A" />
+
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/subscriptionOptionB"
         android:layout_width="280dp"
         android:layout_height="50dp"
         android:layout_below="@+id/subscriptionOptionA"
+        android:layout_centerHorizontal="true"
         android:layout_marginStart="20dp"
         android:layout_marginTop="30dp"
-        android:layout_centerHorizontal="true"
         android:layout_marginEnd="20dp"
         android:background="@drawable/round_back_white10"
         android:elevation="20dp"
