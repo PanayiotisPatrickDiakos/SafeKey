@@ -36,18 +36,18 @@ public class QuestionsBank {
     private static List<QuestionsList> CAwarenessModule() {
         List<QuestionsList> questionsList = new ArrayList<>();
 
-        questionsList.add(new QuestionsList("Which of the following is the most commonly used (and therefore the weakest) password?",
-                "123456", "Asdf", "Iloveyou", "Monkey", "123456", ""));
-        questionsList.add(new QuestionsList("Ideally, what characters should you use in a password to make it strong?",
-                "Letters and Numbers only.", "Mixed Case (Upper and Lower) Characters", "Special Characters", "Monkey", "All of the above", ""));
-        questionsList.add(new QuestionsList("Ideally, what characters should you use in a password to make it strong?",
-                "Letters and Numbers only.", "Mixed Case (Upper and Lower) Characters", "Special Characters", "Monkey", "All of the above", ""));
-        questionsList.add(new QuestionsList("Ideally, what characters should you use in a password to make it strong?",
-                "Letters and Numbers only.", "Mixed Case (Upper and Lower) Characters", "Special Characters", "Monkey", "All of the above", ""));
-        questionsList.add(new QuestionsList("Ideally, what characters should you use in a password to make it strong?",
-                "Letters and Numbers only.", "Mixed Case (Upper and Lower) Characters", "Special Characters", "Monkey", "All of the above", ""));
-        questionsList.add(new QuestionsList("Ideally, what characters should you use in a password to make it strong?",
-                "Letters and Numbers only.", "Mixed Case (Upper and Lower) Characters", "Special Characters", "Monkey", "All of the above", ""));
+        questionsList.add(new QuestionsList("Which of the following attacks requires a carrier file to self-replicate?",
+                "Trojan", "Virus", "Worm", "Spam", "All of the above", ""));
+        questionsList.add(new QuestionsList("Which of the following offers the strongest wireless signal encryption?",
+                "WEP", "WAP", "WIPS", "WPA", "All of the above", ""));
+        questionsList.add(new QuestionsList("Someone who is posing as an IT tech requests information about your computer configuration.  What kind of attack is this?",
+                "Insider threat", "Phishing", "Social Engineering", "Whaling", "All of the above", ""));
+        questionsList.add(new QuestionsList("Which of the following describes monitoring software installed without your consent?",
+                "Malware", "Adware", "Spyware", "Ransomware", "All of the above", ""));
+        questionsList.add(new QuestionsList("Which of the following is NOT a type of virus?",
+                "Tunnelling", "Boot sector", "Macro", "Wrapper", "All of the above", ""));
+        questionsList.add(new QuestionsList("Which of the following is the security standard for WPA2?",
+                "802.11ad", "802.11i", "802.11n", "802.11a", "All of the above", ""));
         questionsList.add(new QuestionsList("Ideally, what characters should you use in a password to make it strong?",
                 "Letters and Numbers only.", "Mixed Case (Upper and Lower) Characters", "Special Characters", "Monkey", "All of the above", ""));
         questionsList.add(new QuestionsList("Ideally, what characters should you use in a password to make it strong?",

@@ -53,10 +53,10 @@ public class Module {
 
     public static ArrayList<Module> getModules() {
         ArrayList<Module> modules = new ArrayList<>();
-        modules.add(new Module("1","Password Protection", R.drawable.md_password, 4));
-        modules.add(new Module("2","Cyber Awareness", R.drawable.md_password, 3));
-        modules.add(new Module("3","Netiquette", R.drawable.md_password, 1));
-        modules.add(new Module("4","Phishing Detection", R.drawable.md_password, 1));
+        modules.add(new Module("1","Password Protection", R.drawable.ic_baseline_lock_open_24, 4));
+        modules.add(new Module("2","Cyber Awareness", R.drawable.ic_baseline_web_24, 3));
+        modules.add(new Module("3","Netiquette", R.drawable.ic_baseline_fingerprint_24, 1));
+        modules.add(new Module("4","Phishing Detection", R.drawable.ic_baseline_pageview_24, 1));
         return modules;
     }
 
