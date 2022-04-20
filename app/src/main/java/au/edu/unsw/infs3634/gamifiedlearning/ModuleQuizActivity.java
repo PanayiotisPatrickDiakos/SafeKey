@@ -5,6 +5,7 @@ import androidx.appcompat.widget.AppCompatButton;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.CountDownTimer;
 import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
@@ -13,6 +14,7 @@ import android.widget.Toast;
 import java.util.List;
 import java.util.Timer;
 import java.util.TimerTask;
+import java.util.concurrent.TimeUnit;
 
 public class ModuleQuizActivity extends AppCompatActivity {
     private static final String TAG = "ModuleQuizActivity";
@@ -21,8 +23,8 @@ public class ModuleQuizActivity extends AppCompatActivity {
     private AppCompatButton mOptionA, mOptionB, mOptionC, mOptionD;
     private AppCompatButton mNext;
     private Timer quizTimer;
-    private int totalTimeInMins = 1;
-    private int seconds = 0;
+    private int totalTimeInMins = 0;
+    private int seconds = 10;
     private List<QuestionsList> questionsList;
     private int currentQuestionPosition = 0;
     private String selectedOptionByUser = "";
@@ -174,7 +176,8 @@ public class ModuleQuizActivity extends AppCompatActivity {
             mOptionD.setText(questionsList.get(currentQuestionPosition).getOptionD());
         } else {
             Intent intent = new Intent(ModuleQuizActivity.this, ModuleQuizResultsActivity.class);
-            intent.putExtra("correct", getCorrectAnswers());
+            String correctAnswers = String.valueOf(getCorrectAnswers());
+            intent.putExtra("correct", correctAnswers);
             intent.putExtra("incorrect", getIncorrectAnswers());
             startActivity(intent);
             finish();
@@ -182,23 +185,25 @@ public class ModuleQuizActivity extends AppCompatActivity {
     }
 
     private void startTimer(TextView timerTextView) {
+        long duration = TimeUnit.MINUTES.toMillis(1);
         quizTimer = new Timer();
         quizTimer.scheduleAtFixedRate(new TimerTask() {
             @Override
             public void run() {
-                if(seconds == 0) {
+                if(totalTimeInMins == 0 && seconds == 0) {
+
+                    quizTimer.purge();
+                    quizTimer.cancel();
+                    Intent intent = new Intent(ModuleQuizActivity.this, ModuleQuizResultsActivity.class);
+                    String correctAnswers = String.valueOf(getCorrectAnswers());
+                    intent.putExtra("correct", correctAnswers);
+                    intent.putExtra("incorrect", getIncorrectAnswers());
+                    startActivity(intent);
+
+                    finish();
+                } else if(seconds == 0) {
                     totalTimeInMins--;
                     seconds = 59;
-                } else if(seconds == 0 && totalTimeInMins == 0) {
-                        quizTimer.purge();
-                        quizTimer.cancel();
-                        Toast.makeText(ModuleQuizActivity.this, "Time Over", Toast.LENGTH_SHORT).show();
-                        Intent intent = new Intent(ModuleQuizActivity.this, ModuleQuizResultsActivity.class);
-                        intent.putExtra("correct", getCorrectAnswers());
-                        intent.putExtra("incorrect", getIncorrectAnswers());
-                        startActivity(intent);
-
-                        finish();
                 } else {
                     seconds--;
                 }
@@ -236,6 +241,7 @@ public class ModuleQuizActivity extends AppCompatActivity {
                 correctAnswers++;
             }
         }
+        Log.d(TAG, "RESULTS" + String.valueOf(correctAnswers));
         return correctAnswers;
     }
 

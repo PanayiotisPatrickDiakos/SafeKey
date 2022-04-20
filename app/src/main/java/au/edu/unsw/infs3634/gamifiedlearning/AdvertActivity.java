@@ -15,6 +15,8 @@ import android.widget.ImageView;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
+import java.util.Random;
+
 public class AdvertActivity extends AppCompatActivity {
     private ImageView mCancel;
     private ImageView mAdvert;
@@ -29,7 +31,20 @@ public class AdvertActivity extends AppCompatActivity {
 
         mCancel = findViewById(R.id.iv_cancel);
         mAdvert = findViewById(R.id.iv_ad);
-//todo: random ad generator here
+
+        Random rand = new Random();
+        int rand_int = rand.nextInt(4-1) + 1;
+        switch(rand_int) {
+            case 1:
+                mAdvert.setImageResource(R.drawable.bitpay_ad);
+                break;
+            case 2:
+                mAdvert.setImageResource(R.drawable.nordvpn_ad);
+                break;
+            case 3:
+                mAdvert.setImageResource(R.drawable.unsw_ad);
+                break;
+        }
 
         mCancel.setOnClickListener(new View.OnClickListener() {
             @Override
