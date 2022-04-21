@@ -9,12 +9,13 @@
         android:id="@+id/title"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        tools:text="Title here"
         android:layout_margin="08dp"
+        android:fontFamily="sans-serif-black"
         android:gravity="start"
         app:layout_constraintEnd_toStartOf="@id/newsImage"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="Title here" />
 
     <TextView
         android:id="@+id/description"
