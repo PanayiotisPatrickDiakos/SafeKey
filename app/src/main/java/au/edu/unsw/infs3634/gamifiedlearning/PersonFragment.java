@@ -11,6 +11,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
@@ -19,7 +20,13 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
-public class PersonFragment extends Fragment {
+import java.util.List;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+
+public class PersonFragment extends Fragment implements Callback<NewsResponse> {
     private ImageView mBadge;
     private FirebaseAuth mAuth;
     private DatabaseReference mDatabase;
@@ -29,6 +36,7 @@ public class PersonFragment extends Fragment {
     private User user;
     private static final String TAG = "PersonFragment";
     private TextView badgeScore, badgeText;
+    private RecyclerView newsRecycleView;
 
 
     @Nullable
@@ -39,6 +47,9 @@ public class PersonFragment extends Fragment {
         mBadge = view.findViewById(R.id.iv_badge);
         badgeScore = view.findViewById(R.id.badge_score);
         badgeText = view.findViewById(R.id.badge_text);
+        newsRecycleView = view.findViewById(R.id.news_recycleview);
+
+        getNews();
 
         mAuth = FirebaseAuth.getInstance();
         mDatabase = FirebaseDatabase.getInstance("https://safekeylogin-default-rtdb.asia-southeast1.firebasedatabase.app/").getReference();
@@ -98,5 +109,26 @@ public class PersonFragment extends Fragment {
         });
 
         return view;
+    }
+
+    private void getNews() {
+        new RetrofitClient().start("bbc-news","d3eb336558804795b8a7d6cc9fc86484",this);
+    }
+
+
+    @Override
+    public void onResponse(Call<NewsResponse> call, Response<NewsResponse> response) {
+        if(response.isSuccessful() && response.body() != null) {
+            List<Article> articleList = response.body().getArticles();
+           NewsAdapter adapter = new NewsAdapter(articleList);
+           newsRecycleView.setAdapter(adapter);
+        } else {
+            Log.i("Error: ",response.errorBody().source().toString());
+        }
+    }
+
+    @Override
+    public void onFailure(Call<NewsResponse> call, Throwable t) {
+        t.printStackTrace();
     }
 }
