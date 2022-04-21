@@ -13,6 +13,9 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+/**
+ * Creates home fragment with modules in recycler view
+ */
 public class HomeFragment extends Fragment {
     private String TAG = "HomeFragment";
     private RecyclerView mRecyclerView;

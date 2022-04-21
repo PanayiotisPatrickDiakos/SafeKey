@@ -26,6 +26,10 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+/**
+ * Utilise firebase to authenticate users with Name, email address and passwords. Dependant on user's
+ * subscription status determines advert activity
+ */
 public class LoginScreen extends AppCompatActivity {
 
     private EditText email, password;

@@ -13,6 +13,9 @@ import javax.mail.Transport;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
 
+/**
+ * API that sends email to user's email address based on subscription chosen
+ */
     public class JavaMailAPI extends AsyncTask<Void,Void,Void>  {
 
         //Variables

@@ -17,6 +17,9 @@ import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.Random;
 
+/**
+ * Responsible for generating random advert after login
+ */
 public class AdvertActivity extends AppCompatActivity {
     private ImageView mCancel;
     private ImageView mAdvert;
