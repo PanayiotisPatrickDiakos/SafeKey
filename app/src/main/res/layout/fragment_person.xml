@@ -74,6 +74,15 @@
             android:layout_marginTop="30dp"
             android:layout_marginEnd="25dp"
             app:srcCompat="@drawable/bronze" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/news_recycleview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            android:layout_below="@id/iv_badge"
+            tools:listitem="@layout/item_news"
+            android:layout_margin="08dp" />
     </RelativeLayout>
 
 
