@@ -68,29 +68,9 @@ public class LoginScreen extends AppCompatActivity {
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if(task.isSuccessful()) {
                             Toast.makeText(LoginScreen.this, "Login Successful", Toast.LENGTH_SHORT).show();
-                            mDatabase = FirebaseDatabase.getInstance("https://safekeylogin-default-rtdb.asia-southeast1.firebasedatabase.app/").getReference();
-                            uid = mAuth.getCurrentUser().getUid().toString();
-                            mDatabase.addValueEventListener(new ValueEventListener() {
-                                @Override
-                                public void onDataChange(@NonNull DataSnapshot snapshot) {
-                                    if(snapshot.exists() && !updateDone) {
-                                        String subscribeStatus = snapshot.child(USER).child(uid).child("subscribe").getValue().toString();
-                                        if(subscribeStatus.equals("false")) {
                                             Intent intent = new Intent(LoginScreen.this, AdvertActivity.class);
                                             startActivity(intent);
-                                        } else {
-                                            Intent intent = new Intent(LoginScreen.this, MainActivity.class);
-                                            startActivity(intent);
-                                        }
-                                    }
 
-                                }
-
-                                @Override
-                                public void onCancelled(@NonNull DatabaseError error) {
-
-                                }
-                            });
                         }
                         else {
                             Toast.makeText(LoginScreen.this, "Incorrect email or password", Toast.LENGTH_SHORT).show();
