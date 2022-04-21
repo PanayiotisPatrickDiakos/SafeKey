@@ -16,6 +16,7 @@ public class User {
         this.badge = badge;
         this.subscribe =subscribe;
     }
+    //getters and setters for user profiles
 
     public String getfName() {
         return fName;

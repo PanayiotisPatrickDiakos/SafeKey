@@ -26,7 +26,7 @@ public class SettingsFragment extends Fragment {
     private static final String USER = "user";
     private User user;
     boolean updateDone = false;
-
+    //Subscription screen which ahs subscription options
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {

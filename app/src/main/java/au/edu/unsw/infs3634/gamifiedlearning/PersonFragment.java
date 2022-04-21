@@ -48,9 +48,9 @@ public class PersonFragment extends Fragment implements Callback<NewsResponse> {
         badgeScore = view.findViewById(R.id.badge_score);
         badgeText = view.findViewById(R.id.badge_text);
         newsRecycleView = view.findViewById(R.id.news_recycleview);
-
+        //gets news articles from API Source
         getNews();
-
+        //Firebase detects user account and returns account profile ranking and exp
         mAuth = FirebaseAuth.getInstance();
         mDatabase = FirebaseDatabase.getInstance("https://safekeylogin-default-rtdb.asia-southeast1.firebasedatabase.app/").getReference();
         uid = mAuth.getCurrentUser().getUid().toString();
@@ -71,7 +71,7 @@ public class PersonFragment extends Fragment implements Callback<NewsResponse> {
                     Log.d(TAG, String.valueOf(currentBadge));
 
                     badgeScore.setText(String.valueOf(currentXPInt));
-
+                    //conditions for setting the badge image displayed on profile based on the current score a user possesses
                     if(currentXPInt < 100) {
                         mBadge.setImageResource(R.drawable.bronze);
                         badgeText.append(" Bronze");
@@ -115,7 +115,7 @@ public class PersonFragment extends Fragment implements Callback<NewsResponse> {
         new RetrofitClient().start("bbc-news","d3eb336558804795b8a7d6cc9fc86484",this);
     }
 
-
+    //pulls news article from news adapter to profile fragment
     @Override
     public void onResponse(Call<NewsResponse> call, Response<NewsResponse> response) {
         if(response.isSuccessful() && response.body() != null) {

@@ -5,6 +5,7 @@ import retrofit2.http.GET;
 import retrofit2.http.Query;
 
 public interface NewsApiClient {
+    //Fetching news source as well as API key for using public API
     @GET("/v2/top-headlines")
     Call<NewsResponse> getNews(
             @Query("sources") String sources,

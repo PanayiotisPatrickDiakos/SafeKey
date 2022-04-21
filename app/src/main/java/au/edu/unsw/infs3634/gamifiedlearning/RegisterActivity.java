@@ -25,6 +25,7 @@ import com.google.firebase.database.FirebaseDatabase;
 
 public class RegisterActivity extends AppCompatActivity {
 
+    //This class allows users to register using email and password which is parsed into Google Firebase authentication
     private FirebaseAuth mAuth;
     private EditText email, password, fName;
     private Button regButton;

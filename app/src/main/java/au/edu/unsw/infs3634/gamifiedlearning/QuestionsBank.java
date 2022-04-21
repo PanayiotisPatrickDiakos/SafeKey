@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class QuestionsBank {
+    //this is the question bank for the quiz modules
     public static List<QuestionsList> PSecurityModule() {
         List<QuestionsList> questionsList = new ArrayList<>();
         questionsList.add(new QuestionsList("Which of the following is the most commonly used (and therefore the weakest) password?",

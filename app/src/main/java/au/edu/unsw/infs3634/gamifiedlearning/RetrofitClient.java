@@ -10,7 +10,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class RetrofitClient {
 
     static final String BASE_URL = " https://newsapi.org/";
-
+    //Sets API values for viewholder
     public void start(String headline, String apiKey, Callback<NewsResponse> callback) {
         Gson gson = new GsonBuilder()
                 .setLenient()

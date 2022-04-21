@@ -20,7 +20,7 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.NewsViewHolder
     public NewsAdapter(List<Article> articleList) {
         this.articleList = articleList;
     }
-
+    //this class is an adapter which brings news article placeholders into a recyclerview
     @NonNull
     @Override
     public NewsViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {

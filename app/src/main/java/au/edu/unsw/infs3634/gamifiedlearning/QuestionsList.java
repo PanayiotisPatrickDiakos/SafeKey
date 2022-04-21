@@ -13,7 +13,7 @@ public class QuestionsList {
         this.answer = answer;
         this.userSelectedAnswer = userSelectedAnswer;
     }
-
+    //getters and setters for String attributes
     public String getQuestion() {
         return question;
     }

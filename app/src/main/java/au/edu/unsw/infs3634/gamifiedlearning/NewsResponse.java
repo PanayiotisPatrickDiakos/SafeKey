@@ -8,7 +8,7 @@ public class NewsResponse {
     public List<Article> getArticles() {
         return articles;
     }
-
+    //fetches list list of news articles form NewsAPI
     public void setArticles(List<Article> articles) {
         this.articles = articles;
     }
