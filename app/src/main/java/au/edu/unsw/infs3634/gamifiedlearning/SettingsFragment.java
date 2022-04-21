@@ -69,6 +69,66 @@ public class SettingsFragment extends Fragment {
             }
         });
 
+        mOptionB.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                mAuth = FirebaseAuth.getInstance();
+                mDatabase = FirebaseDatabase.getInstance("https://safekeylogin-default-rtdb.asia-southeast1.firebasedatabase.app/").getReference();
+                uid = mAuth.getCurrentUser().getUid().toString();
+                //Get User email
+                mDatabase.addValueEventListener(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot snapshot) {
+                        if (snapshot.exists() && !updateDone) {
+                            String userEmail = snapshot.child(USER).child(uid).child("email").getValue().toString();
+                            String subject = "SafeKey Subscription Invoice: Noob Plan";
+                            String message = "Thank you for subscribing to SafeKey! Consider this as an invoice for\n" +
+                                    "your Professional plan. \n" +
+                                    "Month: April\n" +
+                                    "Price: AUD $1.50\n" +
+                                    "Account's Card: XXXX XXXX XXXX 1234";
+                            sendMail(userEmail, subject, message);
+                        }
+                    }
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError error) {
+
+                    }
+                });
+
+            }
+        });
+
+        mOptionC.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                mAuth = FirebaseAuth.getInstance();
+                mDatabase = FirebaseDatabase.getInstance("https://safekeylogin-default-rtdb.asia-southeast1.firebasedatabase.app/").getReference();
+                uid = mAuth.getCurrentUser().getUid().toString();
+                //Get User email
+                mDatabase.addValueEventListener(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot snapshot) {
+                        if (snapshot.exists() && !updateDone) {
+                            String userEmail = snapshot.child(USER).child(uid).child("email").getValue().toString();
+                            String subject = "SafeKey Subscription Invoice: Noob Plan";
+                            String message = "Thank you for subscribing to SafeKey! Consider this as an invoice for\n" +
+                                    "your Blackhat plan. \n" +
+                                    "Month: April\n" +
+                                    "Price: AUD $4.10\n" +
+                                    "Account's Card: XXXX XXXX XXXX 1234";
+                            sendMail(userEmail, subject, message);
+                        }
+                    }
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError error) {
+
+                    }
+                });
+
+            }
+        });
+
         return view;
     }
 
