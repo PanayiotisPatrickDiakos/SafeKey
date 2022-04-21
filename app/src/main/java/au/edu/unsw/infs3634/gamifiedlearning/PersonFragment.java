@@ -6,6 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -27,6 +28,8 @@ public class PersonFragment extends Fragment {
     private static final String USER = "user";
     private User user;
     private static final String TAG = "PersonFragment";
+    private TextView badgeScore, badgeText;
+
 
     @Nullable
     @Override
@@ -34,6 +37,8 @@ public class PersonFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_person, container, false);
 
         mBadge = view.findViewById(R.id.iv_badge);
+        badgeScore = view.findViewById(R.id.badge_score);
+        badgeText = view.findViewById(R.id.badge_text);
 
         mAuth = FirebaseAuth.getInstance();
         mDatabase = FirebaseDatabase.getInstance("https://safekeylogin-default-rtdb.asia-southeast1.firebasedatabase.app/").getReference();
@@ -54,29 +59,31 @@ public class PersonFragment extends Fragment {
                     mBadge.setImageResource(currentBadgeInt);
                     Log.d(TAG, String.valueOf(currentBadge));
 
+                    badgeScore.setText(String.valueOf(currentXPInt));
+
                     if(currentXPInt < 100) {
                         mBadge.setImageResource(R.drawable.bronze);
-                        currentBadgeInt = R.drawable.bronze;
+                        badgeText.append(" Bronze");
                         mDatabase.child(USER).child(uid).child("badge").setValue(String.valueOf(currentBadge));
                     }else if(currentXPInt < 200) {
                         mBadge.setImageResource(R.drawable.silver);
-                        currentBadgeInt = R.drawable.silver;
+                        badgeText.append(" Silver");
                         mDatabase.child(USER).child(uid).child("badge").setValue(String.valueOf(currentBadge));
                     }else if(currentXPInt < 300) {
                         mBadge.setImageResource(R.drawable.gold);
-                        currentBadgeInt = R.drawable.gold;
+                        badgeText.append(" Gold");
                         mDatabase.child(USER).child(uid).child("badge").setValue(String.valueOf(currentBadge));
                     }else if(currentXPInt < 400) {
                         mBadge.setImageResource(R.drawable.platinum);
-                        currentBadgeInt = R.drawable.platinum;
+                        badgeText.append(" Platinum");
                         mDatabase.child(USER).child(uid).child("badge").setValue(String.valueOf(currentBadge));
                     }else if(currentXPInt < 500) {
                         mBadge.setImageResource(R.drawable.ruby);
-                        currentBadgeInt = R.drawable.ruby;
+                        badgeText.append(" Ruby");
                         mDatabase.child(USER).child(uid).child("badge").setValue(String.valueOf(currentBadge));
                     }else if(currentXPInt < 600) {
                         mBadge.setImageResource(R.drawable.champion);
-                        currentBadgeInt = R.drawable.champion;
+                        badgeText.append(" Champion");
                         mDatabase.child(USER).child(uid).child("badge").setValue(String.valueOf(currentBadge));
                     }
                     updateDone = true;
