@@ -8,6 +8,7 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -19,13 +20,23 @@ import com.google.android.gms.tasks.Task;
 import com.google.android.material.button.MaterialButton;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 public class LoginScreen extends AppCompatActivity {
 
-    private FirebaseAuth mAuth;
     private EditText email, password;
     private TextView register;
     private Button loginButton;
+    private DatabaseReference mDatabase;
+    private FirebaseAuth mAuth;
+    private String uid;
+    private static final String USER = "user";
+    private User user;
+    boolean updateDone = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,8 +64,29 @@ public class LoginScreen extends AppCompatActivity {
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if(task.isSuccessful()) {
                             Toast.makeText(LoginScreen.this, "Login Successful", Toast.LENGTH_SHORT).show();
-                            Intent intent = new Intent(LoginScreen.this, MainActivity.class);
-                            startActivity(intent);
+                            mDatabase = FirebaseDatabase.getInstance("https://safekeylogin-default-rtdb.asia-southeast1.firebasedatabase.app/").getReference();
+                            uid = mAuth.getCurrentUser().getUid().toString();
+                            mDatabase.addValueEventListener(new ValueEventListener() {
+                                @Override
+                                public void onDataChange(@NonNull DataSnapshot snapshot) {
+                                    if(snapshot.exists() && !updateDone) {
+                                        String subscribeStatus = snapshot.child(USER).child(uid).child("subscribe").getValue().toString();
+                                        if(subscribeStatus.equals("false")) {
+                                            Intent intent = new Intent(LoginScreen.this, AdvertActivity.class);
+                                            startActivity(intent);
+                                        } else {
+                                            Intent intent = new Intent(LoginScreen.this, MainActivity.class);
+                                            startActivity(intent);
+                                        }
+                                    }
+
+                                }
+
+                                @Override
+                                public void onCancelled(@NonNull DatabaseError error) {
+
+                                }
+                            });
                         }
                         else {
                             Toast.makeText(LoginScreen.this, "Incorrect email or password", Toast.LENGTH_SHORT).show();

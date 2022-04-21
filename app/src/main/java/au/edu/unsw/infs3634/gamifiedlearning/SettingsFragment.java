@@ -57,6 +57,7 @@ public class SettingsFragment extends Fragment {
                                     "Price: AUD $0.50\n" +
                                     "Account's Card: XXXX XXXX XXXX 1234";
                             sendMail(userEmail, subject, message);
+                            mDatabase.child(USER).child(uid).child("subscribe").setValue("true");
                         }
                     }
 
@@ -88,6 +89,7 @@ public class SettingsFragment extends Fragment {
                                     "Price: AUD $1.50\n" +
                                     "Account's Card: XXXX XXXX XXXX 1234";
                             sendMail(userEmail, subject, message);
+                            mDatabase.child(USER).child(uid).child("subscribe").setValue("true");
                         }
                     }
                     @Override
@@ -118,6 +120,7 @@ public class SettingsFragment extends Fragment {
                                     "Price: AUD $4.10\n" +
                                     "Account's Card: XXXX XXXX XXXX 1234";
                             sendMail(userEmail, subject, message);
+                            mDatabase.child(USER).child(uid).child("subscribe").setValue("true");
                         }
                     }
                     @Override
