@@ -80,7 +80,7 @@ public class RegisterActivity extends AppCompatActivity {
                 public void onComplete(@NonNull Task<AuthResult> task) {
                     if(task.isSuccessful()) {
                         Log.d(TAG,"created user");
-                        user = new User(fullName, "null", "0", emailString, passString, R.drawable.bronze);
+                        user = new User(fullName, "null", "0", emailString, passString, R.drawable.bronze, "false");
                         database.getReference(USER).child(mAuth.getCurrentUser().getUid())
                                 .setValue(user).addOnCompleteListener(new OnCompleteListener<Void>() {
                             @Override

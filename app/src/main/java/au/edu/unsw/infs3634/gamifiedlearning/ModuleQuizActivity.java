@@ -23,8 +23,8 @@ public class ModuleQuizActivity extends AppCompatActivity {
     private AppCompatButton mOptionA, mOptionB, mOptionC, mOptionD;
     private AppCompatButton mNext;
     private Timer quizTimer;
-    private int totalTimeInMins = 0;
-    private int seconds = 20;
+    private int totalTimeInMins = 2;
+    private int seconds = 0;
     private List<QuestionsList> questionsList;
     private int currentQuestionPosition = 0;
     private String selectedOptionByUser = "";

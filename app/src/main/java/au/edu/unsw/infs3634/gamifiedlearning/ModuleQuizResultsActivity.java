@@ -53,7 +53,7 @@ public class ModuleQuizResultsActivity extends AppCompatActivity {
 
         double correctMulti = Double.parseDouble(correct);
         final double xpGained = correctMulti * secLeft;
-        mXP.setText(String.valueOf(xpGained));
+        mXP.setText("+" + String.valueOf(xpGained) + "XP");
 
         mAuth = FirebaseAuth.getInstance();
         mDatabase = FirebaseDatabase.getInstance("https://safekeylogin-default-rtdb.asia-southeast1.firebasedatabase.app/").getReference();

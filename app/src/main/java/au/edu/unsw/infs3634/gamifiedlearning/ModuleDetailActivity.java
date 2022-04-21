@@ -18,7 +18,7 @@ public class ModuleDetailActivity extends AppCompatActivity {
     public static final String INTENT_MESSAGE = "intent_message";
     private TextView mName;
     private Button mStartQuiz;
-    private TextView mDescription;
+    private TextView mDescription, mTheory;
     private ImageView mImage;
     private RatingBar mDifficulty;
 
@@ -30,6 +30,7 @@ public class ModuleDetailActivity extends AppCompatActivity {
         mName = findViewById(R.id.detail_Name);
         mDescription = findViewById(R.id.description_Name);
         mStartQuiz = findViewById(R.id.detail_startQuiz);
+        mTheory = findViewById(R.id.txt_detail_theory);
         Intent intent = getIntent();
         if (intent.hasExtra(INTENT_MESSAGE)) {
             String moduleSymbol = getIntent().getStringExtra(INTENT_MESSAGE);
@@ -46,6 +47,7 @@ public class ModuleDetailActivity extends AppCompatActivity {
             if (module != null) {
                 mName.setText(module.getName());
                 mDescription.setText(module.getDescription());
+                mTheory.setText(module.getTheory());
             }
         }
     }

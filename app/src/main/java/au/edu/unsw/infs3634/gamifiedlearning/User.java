@@ -5,14 +5,16 @@ import android.net.Uri;
 public class User {
     private String fName, lName, xp, email, password;
     private int badge;
+    private String subscribe;
 
-    public User(String fName, String lName, String xp, String email, String password, int badge) {
+    public User(String fName, String lName, String xp, String email, String password, int badge, String subscribe) {
         this.fName = fName;
         this.lName = lName;
         this.xp = xp;
         this.email = email;
         this.password = password;
         this.badge = badge;
+        this.subscribe =subscribe;
     }
 
     public String getfName() {
@@ -61,5 +63,13 @@ public class User {
 
     public void setBadge(int badge) {
         this.badge = badge;
+    }
+
+    public String getSubscribe() {
+        return subscribe;
+    }
+
+    public void setSubscribe(String subscribe) {
+        this.subscribe = subscribe;
     }
 }
