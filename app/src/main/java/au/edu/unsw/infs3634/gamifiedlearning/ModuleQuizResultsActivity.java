@@ -78,13 +78,12 @@ public class ModuleQuizResultsActivity extends AppCompatActivity {
             }
         });
 
+        mContinue.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(ModuleQuizResultsActivity.this, MainActivity.class);
+            }
+        });
 
-
-
-
-
-        }
-
-
-
+    }
 }

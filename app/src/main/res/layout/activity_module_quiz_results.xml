@@ -10,8 +10,8 @@
         android:id="@+id/res_results_label"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="64dp"
-        android:layout_marginTop="92dp"
+        android:layout_marginStart="88dp"
+        android:layout_marginTop="180dp"
         android:text="Results"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -29,8 +29,8 @@
         android:id="@+id/res_xp_gained"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="120dp"
-        android:layout_marginTop="172dp"
+        android:layout_marginStart="144dp"
+        android:layout_marginTop="288dp"
         android:text="XP Gained"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -44,4 +44,28 @@
         android:text="Continue"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/res_xp_gained" />
+
+    <TextView
+        android:id="@+id/txt_Congratuations"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="60dp"
+        android:text="Congratulations!"
+        android:fontFamily="@font/gilroy_heavy"
+        android:textSize="50dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.509"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="20dp"
+        android:text="You completed the Module's Quiz"
+        android:fontFamily="@font/gilroy_regular"
+        app:layout_constraintStart_toStartOf="@+id/txt_Congratuations"
+        app:layout_constraintTop_toBottomOf="@+id/txt_Congratuations" />
 </androidx.constraintlayout.widget.ConstraintLayout>
