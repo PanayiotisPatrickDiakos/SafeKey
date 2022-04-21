@@ -37,12 +37,33 @@ public class AdvertActivity extends AppCompatActivity {
         switch(rand_int) {
             case 1:
                 mAdvert.setImageResource(R.drawable.bitpay_ad);
+                mAdvert.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://bitpay.com/"));
+                        startActivity(intent);
+                    }
+                });
                 break;
             case 2:
                 mAdvert.setImageResource(R.drawable.nordvpn_ad);
+                mAdvert.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://nordvpn.com/"));
+                        startActivity(intent);
+                    }
+                });
                 break;
             case 3:
                 mAdvert.setImageResource(R.drawable.unsw_ad);
+                mAdvert.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.unsw.edu.au/"));
+                        startActivity(intent);
+                    }
+                });
                 break;
         }
 
@@ -55,16 +76,8 @@ public class AdvertActivity extends AppCompatActivity {
             }
         });
 
-        mAdvert.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.unsw.edu.au/"));
-                startActivity(intent);
-            }
-        });
 
     }
-    //TODO: Anyone know how I can reference this method in 1 class so I don't have to copy and paste it for every activity LMAO
     @Override
     public void onBackPressed() {
         new AlertDialog.Builder(this)

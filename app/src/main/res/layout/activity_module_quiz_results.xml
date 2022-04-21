@@ -8,41 +8,37 @@
 
     <TextView
         android:id="@+id/res_results_label"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="88dp"
-        android:layout_marginTop="180dp"
+        android:layout_width="95dp"
+        android:layout_height="42dp"
+        android:layout_marginTop="44dp"
+        android:fontFamily="@font/gilroy_regular"
+        android:textSize="20dp"
         android:text="Results"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintStart_toStartOf="@+id/textView3"
+        app:layout_constraintTop_toBottomOf="@+id/textView3" />
 
     <TextView
         android:id="@+id/res_results_value"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="76dp"
+        android:layout_width="197dp"
+        android:layout_height="70dp"
+        android:layout_marginStart="72dp"
+        android:layout_marginTop="24dp"
+        android:fontFamily="@font/gilroy_regular"
         android:text="TextView"
-        app:layout_constraintStart_toEndOf="@+id/res_results_label"
-        app:layout_constraintTop_toTopOf="@+id/res_results_label" />
-
-    <TextView
-        android:id="@+id/res_xp_gained"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="144dp"
-        android:layout_marginTop="288dp"
-        android:text="XP Gained"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:textSize="40dp"
+        android:gravity="center"
+        app:layout_constraintStart_toStartOf="@+id/res_results_label"
+        app:layout_constraintTop_toBottomOf="@+id/res_results_label" />
 
     <Button
         android:id="@+id/btn_res_continue"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="128dp"
-        android:layout_marginTop="128dp"
+        android:layout_marginTop="76dp"
         android:text="Continue"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/txt_Congratuations"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="@+id/txt_Congratuations"
         app:layout_constraintTop_toBottomOf="@+id/res_xp_gained" />
 
     <TextView
@@ -50,9 +46,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="60dp"
-        android:text="Congratulations!"
         android:fontFamily="@font/gilroy_heavy"
-        android:textSize="50dp"
+        android:text="Congratulations!"
+        android:textSize="45dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.509"
         app:layout_constraintStart_toStartOf="parent"
@@ -68,4 +64,19 @@
         android:fontFamily="@font/gilroy_regular"
         app:layout_constraintStart_toStartOf="@+id/txt_Congratuations"
         app:layout_constraintTop_toBottomOf="@+id/txt_Congratuations" />
+
+    <TextView
+        android:id="@+id/res_xp_gained"
+        android:layout_width="273dp"
+        android:layout_height="126dp"
+        android:layout_marginTop="68dp"
+        android:fontFamily="@font/gilroy_regular"
+        android:gravity="center"
+        android:text="XP Gained"
+        android:textSize="50dp"
+        android:background="@drawable/round_back_light_yellow10"
+        app:layout_constraintEnd_toEndOf="@+id/res_results_value"
+        app:layout_constraintHorizontal_bias="0.46"
+        app:layout_constraintStart_toStartOf="@+id/res_results_value"
+        app:layout_constraintTop_toBottomOf="@+id/res_results_value" />
 </androidx.constraintlayout.widget.ConstraintLayout>
