@@ -24,4 +24,24 @@
         android:text="TextView"
         app:layout_constraintStart_toEndOf="@+id/res_results_label"
         app:layout_constraintTop_toTopOf="@+id/res_results_label" />
+
+    <TextView
+        android:id="@+id/res_xp_gained"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="120dp"
+        android:layout_marginTop="172dp"
+        android:text="XP Gained"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btn_res_continue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="128dp"
+        android:layout_marginTop="128dp"
+        android:text="Continue"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/res_xp_gained" />
 </androidx.constraintlayout.widget.ConstraintLayout>

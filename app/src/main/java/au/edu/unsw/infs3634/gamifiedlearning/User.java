@@ -1,14 +1,18 @@
 package au.edu.unsw.infs3634.gamifiedlearning;
 
+import android.net.Uri;
+
 public class User {
     private String fName, lName, xp, email, password;
+    private int badge;
 
-    public User(String fName, String lName, String xp, String email, String password) {
+    public User(String fName, String lName, String xp, String email, String password, int badge) {
         this.fName = fName;
         this.lName = lName;
         this.xp = xp;
         this.email = email;
         this.password = password;
+        this.badge = badge;
     }
 
     public String getfName() {
@@ -49,5 +53,13 @@ public class User {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public int getBadge() {
+        return badge;
+    }
+
+    public void setBadge(int badge) {
+        this.badge = badge;
     }
 }

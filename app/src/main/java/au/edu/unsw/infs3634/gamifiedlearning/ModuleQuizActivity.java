@@ -24,7 +24,7 @@ public class ModuleQuizActivity extends AppCompatActivity {
     private AppCompatButton mNext;
     private Timer quizTimer;
     private int totalTimeInMins = 0;
-    private int seconds = 10;
+    private int seconds = 20;
     private List<QuestionsList> questionsList;
     private int currentQuestionPosition = 0;
     private String selectedOptionByUser = "";
@@ -175,17 +175,20 @@ public class ModuleQuizActivity extends AppCompatActivity {
             mOptionC.setText(questionsList.get(currentQuestionPosition).getOptionC());
             mOptionD.setText(questionsList.get(currentQuestionPosition).getOptionD());
         } else {
+            quizTimer.purge();
+            quizTimer.cancel();
             Intent intent = new Intent(ModuleQuizActivity.this, ModuleQuizResultsActivity.class);
             String correctAnswers = String.valueOf(getCorrectAnswers());
             intent.putExtra("correct", correctAnswers);
             intent.putExtra("incorrect", getIncorrectAnswers());
+            intent.putExtra("mins_left", totalTimeInMins + 1);
+            intent.putExtra("sec_left", seconds + 1);
             startActivity(intent);
             finish();
         }
     }
 
     private void startTimer(TextView timerTextView) {
-        long duration = TimeUnit.MINUTES.toMillis(1);
         quizTimer = new Timer();
         quizTimer.scheduleAtFixedRate(new TimerTask() {
             @Override
@@ -198,6 +201,10 @@ public class ModuleQuizActivity extends AppCompatActivity {
                     String correctAnswers = String.valueOf(getCorrectAnswers());
                     intent.putExtra("correct", correctAnswers);
                     intent.putExtra("incorrect", getIncorrectAnswers());
+                    intent.putExtra("mins_left", totalTimeInMins + 1);
+                    intent.putExtra("sec_left", seconds + 1);
+
+
                     startActivity(intent);
 
                     finish();

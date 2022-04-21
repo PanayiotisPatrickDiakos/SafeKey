@@ -1,16 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:id="@+id/personfragment"
     android:background="@color/white">
 
     <TextView
+        android:id="@+id/txt_person"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
         android:text="Person Fragment"
-        android:textSize="30sp"
-        android:layout_centerInParent="true"/>
+        android:textSize="30sp" />
+
+    <ImageView
+        android:id="@+id/iv_badge"
+        android:layout_width="184dp"
+        android:layout_height="151dp"
+        android:layout_below="@+id/txt_person"
+        android:layout_alignStart="@+id/txt_person"
+        android:layout_alignEnd="@+id/txt_person"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="85dp"
+        android:layout_marginEnd="25dp"
+        app:srcCompat="@drawable/bronze" />
 
 
 </RelativeLayout>
