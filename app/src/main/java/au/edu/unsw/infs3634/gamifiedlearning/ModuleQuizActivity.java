@@ -16,6 +16,10 @@ import java.util.Timer;
 import java.util.TimerTask;
 import java.util.concurrent.TimeUnit;
 
+/**
+ * Quiz Activity which displays questions and answer through looping through QuestionBank List dependent
+ * on Module. Also starts timer which automatically ends the quiz if hits 0
+ */
 public class ModuleQuizActivity extends AppCompatActivity {
     private static final String TAG = "ModuleQuizActivity";
     private TextView mQuizName, mTimer;
@@ -147,6 +151,10 @@ public class ModuleQuizActivity extends AppCompatActivity {
         startTimer(mTimer);
     }
 
+    /**
+     * On next quetsion button hit, checks if user has reached end of quiz and continues to next quetsion
+     * otherwise launches result activity
+     */
     private void changeNextQuestion() {
         currentQuestionPosition++;
         if((currentQuestionPosition + 1) == questionsList.size()) {

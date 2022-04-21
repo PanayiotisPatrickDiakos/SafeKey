@@ -10,6 +10,9 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 
+/**
+ * Class which provides logic to recyclerview of the modules in Module fragment
+ */
 public class ModuleListActivity extends AppCompatActivity {
     private static final String TAG = "ModuleListActivity";
     private RecyclerView mRecyclerView;

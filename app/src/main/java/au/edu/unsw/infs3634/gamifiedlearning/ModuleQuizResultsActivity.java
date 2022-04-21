@@ -19,6 +19,10 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+/**
+ * Class responsible for displaying User's results and gained XP from answering correct quetsions,
+ * which is calculated from time left.
+ */
 public class ModuleQuizResultsActivity extends AppCompatActivity {
     private static final String TAG = "ModuleQuizResultsActivity";
     private TextView mResults, mXP;
@@ -54,7 +58,9 @@ public class ModuleQuizResultsActivity extends AppCompatActivity {
         double correctMulti = Double.parseDouble(correct);
         final double xpGained = correctMulti * secLeft;
         mXP.setText("+" + String.valueOf(xpGained) + "XP");
-
+/**
+ * Responsible for retrieving the user's UID and updating their XP attribute in firebase
+ */
         mAuth = FirebaseAuth.getInstance();
         mDatabase = FirebaseDatabase.getInstance("https://safekeylogin-default-rtdb.asia-southeast1.firebasedatabase.app/").getReference();
         uid = mAuth.getCurrentUser().getUid().toString();

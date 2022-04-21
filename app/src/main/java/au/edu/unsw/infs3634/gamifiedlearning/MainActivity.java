@@ -22,6 +22,9 @@ import org.w3c.dom.Text;
 
 import au.edu.unsw.infs3634.gamifiedlearning.databinding.ActivityMainBinding;
 
+/**
+ * Main Activity shows all three fragments after login
+ */
 public class MainActivity extends AppCompatActivity {
 
     ActivityMainBinding binding;

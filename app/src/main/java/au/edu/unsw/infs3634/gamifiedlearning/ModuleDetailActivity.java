@@ -13,6 +13,9 @@ import android.widget.TextView;
 
 import java.util.List;
 
+/**
+ * Class responsible for providing Module specific data after user tapped on Module item
+ */
 public class ModuleDetailActivity extends AppCompatActivity {
     private static final String TAG = "ModuleDetailActivity";
     public static final String INTENT_MESSAGE = "intent_message";
@@ -52,6 +55,10 @@ public class ModuleDetailActivity extends AppCompatActivity {
         }
     }
 
+    /**
+     * Launches the quiz with the Module specific questions
+     * @param symbol, Module's symbol based on it's id number in Module ArrayList<>
+     */
     protected void launchQuizActivity (String symbol) {
         Log.d(TAG, "Detail Activity Launched");
         Intent intent = new Intent(this, ModuleQuizActivity.class);

@@ -4,6 +4,9 @@ import android.util.Log;
 
 import java.util.ArrayList;
 
+/**
+ * Class that provides attributes to the Module list
+ */
 public class Module {
     private static final String TAG = "Module";
     private String id;
@@ -69,6 +72,10 @@ public class Module {
         this.theory = theory;
     }
 
+    /**
+     * Retrieves Modules and their description for ModuleDetailActivity
+     * @return modules, returns the list of Modules in ArrayList format
+     */
     public static ArrayList<Module> getModules() {
         ArrayList<Module> modules = new ArrayList<>();
         modules.add(new Module("1","Password Protection", "This module will teach you the important things to consider when creating a password for accounts.", R.drawable.ic_baseline_lock_open_24, 4,
