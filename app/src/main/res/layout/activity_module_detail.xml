@@ -1,46 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:verticalScrollbarPosition="defaultPosition"
     tools:context=".ModuleDetailActivity">
-
-    <Button
-        android:id="@+id/detail_startQuiz"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@drawable/rounded_buttons"
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="50dp"
-        android:layout_centerHorizontal="true"
-        android:text="Start Module" />
-
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="230dp"
-        android:background="@drawable/ic_wave_18" />
-
-    <TextView
-        android:id="@+id/detail_Name"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/moduleHeader"
-        android:layout_marginLeft="25dp"
-        android:layout_marginTop="10dp"
-        android:text="TextView"
-        android:textColor="@color/white"
-        android:textSize="20sp" />
-
-    <TextView
-        android:id="@+id/description_Name"
-        android:layout_width="350dp"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/detail_Name"
-        android:textColor="@color/white"
-        android:layout_marginLeft="25dp"
-        android:layout_marginTop="7dp"
-        android:text="TextView" />
 
     <TextView
         android:id="@+id/moduleHeader"
@@ -50,41 +16,53 @@
         android:layout_marginTop="28dp"
         android:fontFamily="sans-serif-black"
         android:text="Welcome to the Module for:"
-        android:textColor="@color/white"
         android:textSize="25sp" />
 
     <TextView
-        android:id="@+id/highest_score_text"
+        android:id="@+id/detail_Name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/description_Name"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="80dp"
-        android:text="Your higest score is:"
+        android:layout_marginLeft="25dp"
+        android:layout_marginTop="10dp"
+        android:text="TextView"
         android:textSize="20sp" />
 
     <TextView
-        android:id="@+id/score"
-        android:layout_width="wrap_content"
+        android:id="@+id/description_Name"
+        android:layout_width="350dp"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/highest_score_text"
-        android:layout_marginLeft="130dp"
-        android:layout_marginTop="80dp"
-        android:fontFamily="sans-serif-black"
-        android:text="X"
-        android:textSize="80dp" />
+        android:layout_marginLeft="25dp"
+        android:layout_marginTop="7dp"
+        android:text="TextView" />
 
-    <TextView
-        android:id="@+id/out_of_ten"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/highest_score_text"
-        android:layout_toRightOf="@+id/score"
-        android:layout_marginLeft="5dp"
-        android:layout_marginTop="80dp"
-        android:fontFamily="sans-serif-black"
-        android:text="/10"
-        android:textSize="80dp" />
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:verticalScrollbarPosition="defaultPosition">
+
+            <TextView
+                android:id="@+id/textView5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="So, how do you have a “strong” password that is easy to remember? While it may seem tough to do this, there are a few simple tips that can make it easy. Note: the examples below illustrate just the concepts being discussed. No single technique should be used on its own, but rather should be used with other techniques. The combination of several will produce a strong password. •	Use a mix of alphabetical and numeric characters. •	Use a mixture of upper- and lowercase; passwords are case sensitive. •	Use symbols if the system allows (spaces shouldn’t be used as some applications may trim them away) Use a combination of letters and numbers, or a phrase like “many colors” using only the consonants, e.g., mnYc0l0rz or a misspelled phrase, e.g., 2HotPeetzas or ItzAGurl . Choose You want to choose something that is easy to remember with a minimum of 8 characters that uses as many of the techniques above as possible. One way to do this is to pick a phrase you will remember, pick all the first or last letters from each word and then substitute some letters with numbers and symbols. You can then apply capitals to some letters (perhaps the first and last, or second to last, etc.) You could also perhaps keep or add punctuation. Do Not Choose… •	Your name in any form — first, middle, last, maiden, spelled backwards, nickname or initials. •	Any ID number or user ID in any form, even spelled backwards. •	Part of your userid or name. •	Any common name, e.g., Sue, Joe. •	Passwords of fewer than eight characters. •	The name of a close relative, friend, or pet. •	Your phone or office number, address, birthday, or anniversary. If you only use words from a dictionary or a purely numeric password, a hacker only has to try a limited list of possibilities. A hacking program can try the full set in under one minute. If you use the full set of characters and the techniques above, you force a hacker to continue trying every possible combination to find yours. The longer your password the more secure. •	8 Characters > 645,753,531,245,761 (645 Trillion) Combinations •	9 Characters > 45,848,500,718,449,031 (45 Quadrillion) Combinations •	10 Characters > 3,255,243,551,009,881,201 (3 Quintillion) Combinations " />
+
+            <Button
+                android:id="@+id/detail_startQuiz"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="50dp"
+                android:background="@drawable/rounded_buttons"
+                android:text="Start Module"
+                android:textAlignment="center"
+                android:verticalScrollbarPosition="defaultPosition" />
+
+        </LinearLayout>
+    </ScrollView>
 
 
-</RelativeLayout>
+</LinearLayout>
