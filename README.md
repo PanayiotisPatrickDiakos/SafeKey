@@ -1,5 +1,4 @@
-# unsw-gamified-learning-app-group-30-1
-unsw-gamified-learning-app-group-30-1 created by GitHub Classroom
+# SafeKey App
 TO LOGIN, ENSURE YOU HAVE INSTALLED A GOOGLE API ENABLED EMULATOR (Pixel 4 is the latest in Android Studio)
 Username: admin@admin.com
 Password: admin1
